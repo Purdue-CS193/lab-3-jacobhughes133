@@ -21,14 +21,15 @@ public class MathUtils {
         /* Determine if the exponent is negative */
         boolean isNegative = false;
         if (exp < 0) {
+            exp *= -1;
             isNegative = true;
         }
 
         /* Multiply the result by the base exp times
             Ex: base = 2, exp = 2
                --> res = 2, then res = 4 */
-        for (int i = 0; i < exp; i++) {
-           res = res * (base * exp);
+        for (int i = 1; i < exp; i++) {
+           res *= base;
         }
 
         /* If it's a negative exponent, we should invert it! */
